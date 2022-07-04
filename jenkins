@@ -1,0 +1,170 @@
+
+
+
+
+1  yum install java-1.8.0-openjdk-devel
+
+
+
+
+
+    2 
+curl --silent --location
+http://pkg.jenkins-ci.org/redhat-stable/jenkins.repo | sudo tee /etc/yum.repos.d/jenkins.repo
+
+
+
+
+
+    3 
+sudo rpm --import https://jenkins-ci.org/redhat/jenkins-ci.org.key
+
+
+
+
+
+    4 
+cat /etc/yum.repos.d/jenkins.repo
+
+
+
+
+
+    5 
+yum install jenkins
+
+
+
+
+
+    6 
+service jenkins status
+
+
+
+
+
+    7 
+sustemstl start jenkins
+
+
+
+
+
+    8 
+systemstl start jenkins
+
+
+
+
+
+    9 
+systemctl start jenkins
+
+
+
+
+
+   10 
+systemctl status jenkins
+
+
+
+
+
+   11 
+systemctl enable Jenkins
+
+
+
+
+
+ 
+
+
+
+
+
+
+
+
+sudo yum install firewalld
+
+
+
+
+$ sudo systemctl start firewalld
+$ sudo systemctl enable firewalld
+$ sudo systemctl status firewalld
+
+
+
+
+ 
+
+
+
+
+
+   12 
+sudo firewall-cmd --permanent --zone=public --add-port=8080/tcp
+
+
+
+
+
+   13 
+firewall-cmd --permanent --zone=public --add-port=8080/tcp
+
+
+
+
+
+   14 
+iptables -A PREROUTING -t nat -i eth0 -p tcp --dport 80 -j REDIRECT
+--to-port 8080
+
+
+
+
+
+   15 
+cat /var/lib/jenkins/secrets/initialAdminPassword
+
+
+
+
+
+   16 
+systemctl service jenkins status
+
+
+
+
+
+   17 
+systemctl jenkins status
+
+
+
+
+
+   18  ls
+
+
+
+
+
+   19 
+service jenkins status
+
+
+
+
+
+  
+20  history
+
+
+
+
